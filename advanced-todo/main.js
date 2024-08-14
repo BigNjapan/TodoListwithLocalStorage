@@ -57,6 +57,9 @@ function DisplayTodos() {
 
     todoList.innerHTML = '';
 
+    // Sort todos by the createdAt property
+    todos.sort((a, b) => b.createdAt - a.createdAt);
+
     todos.forEach(todo => {
         const todoItem = document.createElement('div');
         todoItem.classList.add('todo-item')
@@ -65,6 +68,7 @@ function DisplayTodos() {
         const input = document.createElement('input');
         const span = document.createElement('span')
         const content = document.createElement('div');
+        const date = document.createElement('div'); // New div to hold the creation date
         const actions = document.createElement('div');
         const edit = document.createElement('button');
         const deleteButton = document.createElement('button');
@@ -82,10 +86,20 @@ function DisplayTodos() {
 
         content.classList.add('todo-content');
         actions.classList.add('actions');
+        date.classList.add('todo-date');
         edit.classList.add('edit');
         deleteButton.classList.add('delete');
+
         //readonly = cannot change by user
         content.innerHTML = `<input type="text" value="${todo.content}" readonly>`; //made mistake here
+
+        // Format the createdAt timestamp to a readable date string
+        const todoDate = new Date(todo.createdAt);
+        const formattedDate = todoDate.toLocaleString(); // Adjust format as needed
+
+         
+ 
+        date.innerHTML = `Created: ${formattedDate}`; // Display the creation date
 
         edit.innerHTML = 'Edit';
         deleteButton.innerHTML = 'Delete';
@@ -94,7 +108,9 @@ function DisplayTodos() {
         label.appendChild(span);
         actions.appendChild(edit);
         actions.appendChild(deleteButton);
+
         todoItem.appendChild(label);
+        todoItem.appendChild(date); // Append the date to the todo item
         todoItem.appendChild(content);
         todoItem.appendChild(actions);
 
