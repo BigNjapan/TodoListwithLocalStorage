@@ -1,5 +1,11 @@
 # TodoList with LocalStorage
 
+## Recent Updates
+
+- **Date Sorting:** Todos are now sorted based on the date they were created, with the most recent ones displayed at the top.
+- **Creation Date Display:** Each todo item now includes the date and time it was created, displayed in a user-friendly format.
+- **UI Improvements:** The creation date is now visually separated from the todo content to avoid confusion and enhance readability.
+
 ## Project Overview
 This project is a to-do list application where users can:
 
