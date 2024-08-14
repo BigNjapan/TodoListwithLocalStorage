@@ -43,3 +43,5 @@ This project is a to-do list application where users can:
 ### Username Management
 - The username is displayed at the top and can be changed. This change is saved to local storage and persists across sessions.
 
+![image](https://github.com/user-attachments/assets/bfd5f9e9-03c6-4e3a-8956-072fdcffe029)
+
